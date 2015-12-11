@@ -10,12 +10,12 @@ RUN git clone https://github.com/inconshreveable/ngrok.git /ngrok
 RUN cd /ngrok; git checkout -fq $NGROK_VERSION
 
 ####################################
-RUN mkdir -p /ngrok/src/code.google.com/p
-RUN mkdir -p /ngrok/src/gopkg.in
-RUN git clone https://github.com/qida/log4go.git
-RUN mv -f log4go /ngrok/src/code.google.com/p/
-RUN git clone https://github.com/qida/yaml.git
-RUN mv -f yaml /ngrok/src/gopkg.in/yaml.v1
+RUN mkdir -p /ngrok/src/code.google.com/p && \
+    mkdir -p /ngrok/src/gopkg.in && \
+    git clone https://github.com/qida/log4go.git && \
+    mv -f log4go /ngrok/src/code.google.com/p/ && \
+    git clone https://github.com/qida/yaml.git && \
+    mv -f yaml /ngrok/src/gopkg.in/yaml.v1
 ####################################
 ADD *.sh /
 
