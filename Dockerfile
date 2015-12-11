@@ -13,9 +13,9 @@ RUN cd /ngrok; git checkout -fq $NGROK_VERSION
 RUN mkdir -p /ngrok/src/code.google.com/p
 RUN mkdir -p /ngrok/src/gopkg.in
 RUN git clone https://github.com/qida/log4go.git
-RUN mv log4go /ngrok/src/code.google.com/p/
+RUN mv -f log4go /ngrok/src/code.google.com/p/
 RUN git clone https://github.com/qida/yaml.git
-RUN mv yaml /ngrok/src/gopkg.in/yaml.v1
+RUN mv -f yaml /ngrok/src/gopkg.in/yaml.v1
 ####################################
 ADD *.sh /
 
